@@ -35,7 +35,7 @@ namespace serverapp
             }
             if (postGet == Method.POST)
             {
-                body = string.IsNullOrEmpty(args[4]) ? args[4] : null;
+                body = !string.IsNullOrEmpty(args[4]) ? args[4] : null;
             }
             var p = new Program();
             p.Run(url, postGet, runs, headers, body).Wait();
